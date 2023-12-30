@@ -21,8 +21,10 @@ def predict():
     new_flower_features = [request.form[feature] for feature in iris.feature_names]
     new_flower_features = np.array(new_flower_features).astype(float)
     predicted_species = svm_classifier.predict([new_flower_features])
-    result = f"L'espèce prédite pour la nouvelle fleur est : {iris.target_names[predicted_species][0]}"
+    result = f"{iris.target_names[predicted_species][0]}"
+
     return render_template('result.html', result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
