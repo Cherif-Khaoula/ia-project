@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Résultat de la prédiction</title>
+    <style>
+        #menu{
+       
+        background-color: #40b1d0 ;
+        border: 6px solid  #161615da ;
+        
+        
+      }
+      p{
+        color:red;
+      }
+</style>
 </head>
 <body>
-    <h1>{{ result }}</h1>
+    <div id="menu">
+            
+        <center>
+            <h1>Résultat de la prédiction</h1>
+                <br><br> L'espèce prédite pour la nouvelle fleur est :
+            <p>{{ result }}</p><center>
+</div>
 </body>
 </html>
+
