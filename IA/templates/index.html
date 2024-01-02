@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>IA Project</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-             #menu{
-            
-             background-color: #D08040 ;
-             border: 6px solid  #161615da ;
-             
-           }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
-<body >
-           <div id="menu">
-            
+<body>
+    <div id="menu">
+
     <center><h1>Veuillez saisir les mesures des caractéristiques de la fleur :</h1>
-    <form action="/predict" method="post">
-        {% for feature in feature_names %}
-            <label>{{ feature }}:</label>
-            <input type="text" name="{{ feature }}"><br><br>
-        {% endfor %}
-        <input type="submit" value="Prédire">
-    </form></center>
+        <form action="/predict" method="post">
+            {% for feature in feature_names %}
+                <label>{{ feature }}:</label>
+                <input type="text" name="{{ feature }}"><br><br>
+            {% endfor %}
+            <input type="submit" value="Prédire">
+        </form></center>
+    </div>
+<div id="debut">
+    
 </div>
+  
+
 </body>
 </html>
