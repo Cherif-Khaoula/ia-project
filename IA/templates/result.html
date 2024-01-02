@@ -4,26 +4,43 @@
     <meta charset="UTF-8">
     <title>Résultat de la prédiction</title>
     <style>
-        #menu{
-       
-        background-color: #40b1d0 ;
-        border: 6px solid  #161615da ;
+        /* Votre style CSS ici */
+
+        #menu {
+            background-color: #40b1d0;
+            border: 6px solid #161615da;
+        }
+
+        p {
+            color: red;
+        }
         
-        
-      }
-      p{
-        color:red;
-      }
-</style>
+        img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
 </head>
 <body>
     <div id="menu">
-            
         <center>
             <h1>Résultat de la prédiction</h1>
-                <br><br> L'espèce prédite pour la nouvelle fleur est :
-            <p>{{ result }}</p><center>
-</div>
+            <br><br> L'espèce prédite pour la nouvelle fleur est :
+            <p>{{ result }}</p>
+            
+            {% if result == 'setosa' %}
+                <img src="/static/Setosa.jpg" alt="Fleur Setosa">
+            {% elif result == 'versicolor' %}
+                <img src="/static/Versicolor.jpg" alt="Fleur Versicolor">
+            {% elif result == 'virginica' %}
+                <img src="/static/Virginica.jpg" alt="Fleur Virginica">
+            {% else %}
+                <p>Image non disponible</p>
+            {% endif %}
+        </center>
+    </div>
 </body>
 </html>
 
