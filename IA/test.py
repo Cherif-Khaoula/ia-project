@@ -2,6 +2,12 @@ from flask import Flask, render_template, request
 import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.svm import SVC
+import pandas as pd
+# Lien vers le fichier CSV sur GitHub
+url = "https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv"
+# Charger le fichier CSV à partir du lien
+iris_data = pd.read_csv(url)
+
 
 app = Flask(__name__)
 
@@ -27,4 +33,5 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
